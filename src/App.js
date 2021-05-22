@@ -1,15 +1,6 @@
-import PropTypes from 'prop-types'
+import Authentication from './features/authentication'
 
-function App({ message }) {
-    return (
-        <div>
-            {message} {process.env.REACT_APP_API_URL}
-        </div>
-    )
+function App() {
+    return <Authentication></Authentication>
 }
-
-App.propTypes = {
-    message: PropTypes.string.isRequired,
-}
-
 export default App

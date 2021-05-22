@@ -26,6 +26,7 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 2018,
         sourceType: 'module',
+        babelOptions: { configFile: './.babelrc' },
     },
     rules: {
         'prettier/prettier': 'error',
@@ -40,5 +41,6 @@ module.exports = {
         'react/jsx-uses-react': 'error',
         'react/react-in-jsx-scope': 'off',
         'react-hooks/exhaustive-deps': 'error',
+        'import/no-unresolved': 'off',
     },
 }

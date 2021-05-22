@@ -1,5 +1,11 @@
-function App() {
-    return <div>Welcome to Moura</div>
+import PropTypes from 'prop-types'
+
+function App({ message }) {
+    return <div>{message}</div>
+}
+
+App.propTypes = {
+    message: PropTypes.string.isRequired,
 }
 
 export default App

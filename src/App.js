@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types'
 
 function App({ message }) {
-    return <div>{message}</div>
+    return (
+        <div>
+            {message} {process.env.REACT_APP_API_URL}
+        </div>
+    )
 }
 
 App.propTypes = {

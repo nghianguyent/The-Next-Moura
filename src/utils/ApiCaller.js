@@ -7,7 +7,7 @@ export const request = (endpoint, method, headers = {}, params = {}, body = {}) 
     return Axios({
         url: API_URL + endpoint,
         method: method,
-        headers: objectAssign(getHeaders(), headers),
+        headers: objectAssign({}, headers),
         params: objectAssign(params),
         data: body,
     })

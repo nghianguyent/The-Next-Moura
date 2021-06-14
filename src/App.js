@@ -1,6 +1,6 @@
-import Authentication from './features/authentication'
+import Auth from './container/auth'
 
 function App() {
-    return <Authentication></Authentication>
+    return <Auth></Auth>
 }
 export default App

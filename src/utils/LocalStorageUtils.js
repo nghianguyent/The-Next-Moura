@@ -8,7 +8,7 @@ class LocalStorageUtils {
         if (typeof localStorage === 'undefined') {
             return undefined
         }
-        let item = LocalStorageUtils.getItem(key)
+        let item = localStorage.getItem(key)
         if (item && item === 'undefined') {
             item = defaultValue
         }
@@ -22,7 +22,7 @@ class LocalStorageUtils {
     }
     // delete Item
     removeItem(key) {
-        if (typeof localstorage !== 'undefined') {
+        if (typeof localStorage !== 'undefined') {
             localStorage.removeItem(key)
         }
     }
@@ -39,11 +39,19 @@ class LocalStorageUtils {
                         this.deleteUser()
                     }
                 }
-            }
+            } else return token
         }
+        return undefined
     }
-    deleteUser() {}
-    clearUser() {}
+    deleteUser() {
+        localStorage.removeItem(LOCALSTORAGE_TOKEN_NAME)
+    }
+    getToken() {
+        return this.getItem(LOCALSTORAGE_TOKEN_NAME)
+    }
+    clear() {
+        localStorage.clear()
+    }
 }
 
 export default new LocalStorageUtils()

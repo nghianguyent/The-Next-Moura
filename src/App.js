@@ -1,7 +1,9 @@
-import Auth from './container/auth'
+import { BrowserRouter as Router } from 'react-router-dom'
+
+import { Routes } from './routes'
 
 function App() {
-    return <Auth></Auth>
+    return <Router>{Routes}</Router>
 }
 
 export default App

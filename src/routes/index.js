@@ -2,7 +2,9 @@ import React from 'react'
 
 import { Switch } from 'react-router-dom'
 
-import Authentication from './../auth'
+import Authenticate from '../container/Authenticate'
+import Home from '../container/Home'
+import Auth from '../container/auth'
 import { PrivateRoute } from './PrivateRoute'
 import { PublicRoute } from './PublicRoute'
 
@@ -10,11 +12,11 @@ export const publicRoute = [
     {
         name: 'login',
         path: '/login',
-        component: Authentication,
+        component: Auth,
     },
     {
         name: 'home',
-        path: '/home',
+        path: '/',
         component: Home,
     },
 ]
@@ -22,8 +24,8 @@ export const publicRoute = [
 export const privateRoute = [
     {
         name: 'Authentication',
-        path: '/home',
-        component: Authentication,
+        path: '/',
+        component: Authenticate,
     },
 ]
 export const Routes = (

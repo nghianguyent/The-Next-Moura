@@ -2,9 +2,10 @@ import React from 'react'
 
 import { Switch } from 'react-router-dom'
 
-import Authenticate from '../container/Authenticate'
-import Home from '../container/Home'
-import Auth from '../container/auth'
+import { LOCALSTORAGE_TOKEN_NAME } from './../config'
+import Authenticate from './../container/Authenticate'
+import Auth from './../container/auth'
+import LocalStorageUtils from './../utils/LocalStorageUtils'
 import { PrivateRoute } from './PrivateRoute'
 import { PublicRoute } from './PublicRoute'
 
@@ -13,11 +14,6 @@ export const publicRoute = [
         name: 'login',
         path: '/login',
         component: Auth,
-    },
-    {
-        name: 'home',
-        path: '/',
-        component: Home,
     },
 ]
 
@@ -28,6 +24,7 @@ export const privateRoute = [
         component: Authenticate,
     },
 ]
+console.log(LocalStorageUtils.getUser(LOCALSTORAGE_TOKEN_NAME))
 export const Routes = (
     <Switch>
         {publicRoute.map((route) => (
@@ -35,7 +32,7 @@ export const Routes = (
                 key={route.name}
                 exact={true}
                 path={route.path}
-                components={route.component}
+                component={route.component}
             />
         ))}
         {privateRoute.map((route) => (
@@ -43,7 +40,7 @@ export const Routes = (
                 key={route.name}
                 exact={true}
                 path={route.path}
-                components={route.component}
+                component={route.component}
             />
         ))}
     </Switch>

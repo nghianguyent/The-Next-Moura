@@ -1,9 +1,10 @@
-import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
+// import Auth from './container/auth'
 import { Routes } from './routes'
 
 function App() {
-    return <Router>{Routes}</Router>
+    return <BrowserRouter>{Routes}</BrowserRouter>
 }
 
 export default App

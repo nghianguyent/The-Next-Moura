@@ -9,5 +9,5 @@ export const PrivateRoute = ({ components, ...rest }) => {
     if (user && user.sub?.length > 0) {
         return <Route {...rest} component={components} />
     }
-    return <Redirect path="/login" />
+    return <Redirect to="/login" />
 }

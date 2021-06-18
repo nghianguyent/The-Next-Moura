@@ -9,5 +9,5 @@ export const PublicRoute = (props) => {
     if (!user || user.sub?.length <= 0) {
         return <Route {...props} />
     }
-    return <Redirect path="/" />
+    return <Redirect to="/home" />
 }

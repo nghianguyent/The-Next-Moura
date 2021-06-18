@@ -32,7 +32,7 @@ class LocalStorageUtils {
             const token = this.getItem(LOCALSTORAGE_TOKEN_NAME)
             if (token) {
                 try {
-                    // jwt_decode(token)
+                    jwt_decode(token)
                     return jwt_decode(token)
                 } catch (err) {
                     if (err.response && err.response.status === 401) {

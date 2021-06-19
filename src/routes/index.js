@@ -2,10 +2,8 @@ import React from 'react'
 
 import { Switch } from 'react-router-dom'
 
-import { LOCALSTORAGE_TOKEN_NAME } from './../config'
 import Authenticate from './../container/Authenticate'
 import Auth from './../container/auth'
-import LocalStorageUtils from './../utils/LocalStorageUtils'
 import { PrivateRoute } from './PrivateRoute'
 import { PublicRoute } from './PublicRoute'
 
@@ -24,7 +22,7 @@ export const privateRoute = [
         component: Authenticate,
     },
 ]
-console.log(LocalStorageUtils.getUser(LOCALSTORAGE_TOKEN_NAME))
+
 export const Routes = (
     <Switch>
         {publicRoute.map((route) => (

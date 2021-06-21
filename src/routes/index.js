@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Switch } from 'react-router-dom'
 
-import Authenticate from './../container/Authenticate'
+import Authentication from '../container/Authentication'
 import Auth from './../container/auth'
 import { PrivateRoute } from './PrivateRoute'
 import { PublicRoute } from './PublicRoute'
@@ -19,7 +19,7 @@ export const privateRoute = [
     {
         name: 'Authentication',
         path: '/',
-        component: Authenticate,
+        component: Authentication,
     },
 ]
 

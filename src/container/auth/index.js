@@ -1,6 +1,6 @@
 import { Box } from '../../components/Box'
-import { Button } from '../../components/Button/index'
-import { FacebookIcon, GoogleIcon, NinjaIcon } from '../../components/Icon'
+import { Button } from '../../components/Button'
+import { FacebookIcon, GoogleIcon, MouraIcon } from '../../components/Icon'
 
 import {
     Description,
@@ -18,7 +18,7 @@ function Authentication() {
             <LoginBox>
                 <LoginContainer>
                     <Logo>
-                        <NinjaIcon width="100px" height="120px" />
+                        <MouraIcon width="200px" height="80px" />
                     </Logo>
                     <Description>
                         Lorem ipsum dolor sit amer, consectetur adipiscing elit, sed do eiusmod

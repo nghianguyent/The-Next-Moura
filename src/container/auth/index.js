@@ -5,7 +5,7 @@ import { Button } from '../../components/Button/index'
 import { FacebookIcon, GoogleIcon, NinjaIcon } from '../../components/Icon'
 
 import { LOCALSTORAGE_TOKEN_NAME } from './../../config'
-import { post } from './../../utils/ApiCaller'
+import { get } from './../../utils/ApiCaller'
 import { usePersistedState } from './../../utils/UsePersistedState'
 import {
     Description,
@@ -20,28 +20,37 @@ import {
 function Authentication() {
     const { setError } = useForm()
     const { token, setToken } = usePersistedState(LOCALSTORAGE_TOKEN_NAME, '')
-    const Login = async (data) => {
-        try {
-            const response = await post(
-                '/api/v1/auth/google/',
-                {
-                    token: data.accessToken,
-                },
-                {}
-            )
-            if (response.data.success) {
-                setToken(response.data.data.token)
-                location.reload()
+    const Login = async (media) => {
+        // try {
+        //     const response = await post(
+        //         'http://localhost:5000/api/v1/auth/google',
+        //         {
+        //             'Access-Control-Request-Method': HEAD,
+        //             token: data.accessToken,
+        //         },
+        //         {}
+        //     )
+        //     if (response.data.success) {
+        //         setToken(response.data.data.token)
+        //         location.reload()
+        //     }
+        //     console.log(response.data)
+        // } catch (ex) {
+        //     if (ex.respond && ex.status === 401) {
+        //         setError('user', {
+        //             type: 'validate',
+        //             message: 'cannot access token',
+        //         })
+        //     }
+        // }
+        const response = await get(
+            '/api/v1/auth/' + media,
+            {},
+            {
+                'Access-Control-Allow-Origin': 'https://accounts.google.com/',
             }
-            console.log(response.data.data.token)
-        } catch (ex) {
-            if (ex.respond && ex.status === 401) {
-                setError('user', {
-                    type: 'validate',
-                    message: 'cannot access token',
-                })
-            }
-        }
+        )
+        console.log(response.data.data.accessToken)
     }
     return (
         <FullPageContainer>
@@ -55,7 +64,7 @@ function Authentication() {
                         tempor
                     </Description>
                     <Box padding="4rem 0 0 0">
-                        <Button onClick={Login} padding="4px 8px" fullWidth>
+                        <Button onClick={() => Login('google')} padding="4px 8px" fullWidth>
                             <Box margin="0px 10px 0px 0px">
                                 <GoogleIcon width="30px" />
                             </Box>

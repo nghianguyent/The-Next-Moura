@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types'
 
-import { StyledBox } from './style'
+import StyledBaseBox from './BaseBox'
 
-export const Box = (props) => {
-    return <StyledBox {...props}></StyledBox>
+const BoxWrapper = (Component, props) => {
+    const { children, ...rest } = props
+    return <Component {...rest}>{children}</Component>
 }
+
+const Box = (props) => BoxWrapper(StyledBaseBox, props)
+/* Add Box variants here after define the Styled Component in the separate file */
 
 Box.propTypes = {
     padding: PropTypes.string,
@@ -12,3 +16,5 @@ Box.propTypes = {
     height: PropTypes.string,
     margin: PropTypes.string,
 }
+
+export { Box }

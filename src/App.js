@@ -1,7 +1,7 @@
-import Auth from './container/auth'
+import Navbar from './container/navbar'
 
 function App() {
-    return <Auth></Auth>
+    return <Navbar></Navbar>
 }
 
 export default App

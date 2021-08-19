@@ -14,6 +14,7 @@ Button.propTypes = {
     fullWidth: PropTypes.bool,
     padding: PropTypes.string,
     center: PropTypes.bool,
+    border: PropTypes.string,
 }
 
 export { Button }

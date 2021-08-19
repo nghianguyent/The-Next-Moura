@@ -52,9 +52,12 @@ export const SearchBar = styled.div`
     padding-bottom: 4px;
     padding-left: 8px;
     padding-right: 8px;
+    transition-timing-function: ease-out;
+    transition-duration: 180ms;
+    &:hover {
+        border-color: blue;
+    }
 `
-
-// export const
 
 export const SearchInput = styled.input`
     width: 100%;
@@ -65,4 +68,26 @@ export const SearchInput = styled.input`
     &:focus {
         outline: none;
     }
+`
+
+export const NavButton = styled.div`
+    cursor: pointer;
+    padding: 0;
+    height: 49px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        background-color: #f7f7f8;
+    }
+`
+
+export const ButtonWrapper = styled.div`
+    padding: auto;
+`
+
+export const UserIcon = styled.img`
+    width: 24px;
+    height: 24px;
+    position: relative;
 `

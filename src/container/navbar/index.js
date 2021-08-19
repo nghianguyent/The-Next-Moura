@@ -1,5 +1,7 @@
+import { Button } from '../../components/Button'
 import { MouraIcon } from '../../components/Icon'
 
+import userIcon from '../../assets/images/user-icon.jpeg'
 import {
     NavbarContainer,
     NavbarContent,
@@ -8,6 +10,9 @@ import {
     SearchBox,
     SearchBar,
     SearchInput,
+    NavButton,
+    ButtonWrapper,
+    UserIcon,
 } from './style'
 
 function Navbar() {
@@ -23,6 +28,13 @@ function Navbar() {
                             <SearchInput placeholder="Search Moura"></SearchInput>
                         </SearchBar>
                     </SearchBox>
+                    <NavButton>
+                        <ButtonWrapper>
+                            <Button padding="0 8px 0 8px" border="none">
+                                <UserIcon src={userIcon}></UserIcon>
+                            </Button>
+                        </ButtonWrapper>
+                    </NavButton>
                 </NavbarItem>
             </NavbarContent>
         </NavbarContainer>

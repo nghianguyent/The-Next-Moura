@@ -4,7 +4,8 @@ const StyledBaseButton = styled.button`
     width: ${(props) => (props.fullWidth ? '100%' : 'auto')};
     cursor: pointer;
     background: white;
-    border: 1px solid ${(props) => props.theme.darkWhite};
+    border: ${(props) =>
+        props.border === null ? '1px solid' + props.theme.darkWhite : props.border};
     font-weight: 100;
     display: flex;
     justify-content: ${(props) => props.center};

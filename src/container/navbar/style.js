@@ -90,4 +90,5 @@ export const UserIcon = styled.img`
     width: 24px;
     height: 24px;
     position: relative;
+    border-radius: 100%;
 `

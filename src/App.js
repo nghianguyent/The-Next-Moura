@@ -1,7 +1,7 @@
-import Navbar from './container/navbar'
+import Home from './container/home'
 
 function App() {
-    return <Navbar></Navbar>
+    return <Home></Home>
 }
 
 export default App

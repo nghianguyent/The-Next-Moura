@@ -9,9 +9,11 @@ export const NavbarContainer = styled.div`
     padding-right: 0;
     box-shadow: 0 3px 6px rgb(0 0 0 / 4%);
     width: 100%;
+    z-index: 100;
+    background-color: #fff;
 `
 export const NavbarContent = styled.div`
-    max-width: 1002px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -44,7 +46,7 @@ export const SearchBox = styled.div`
 export const SearchBar = styled.div`
     display: flex;
     border: 1px solid #dee0e1;
-    width: 600px;
+    width: 580px;
     border-radius: 3px;
     padding-top: 4px;
     padding-bottom: 4px;
@@ -108,7 +110,7 @@ export const AskButton = styled.button`
     padding: 0 15px;
     cursor: pointer;
     height: 30px;
-    min-width: 30px;
+    min-width: 110px;
     border-width: 0px;
     outline: none;
     text-align: center;

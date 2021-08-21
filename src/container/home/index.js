@@ -23,7 +23,10 @@ import {
     AnswerSpan,
     PostInteraction,
     InteractionContainer,
-    Vote,
+    Interaction,
+    UpVote,
+    VoteSplit,
+    DownVote,
     Comment,
     Share,
 } from './style.js'
@@ -45,7 +48,7 @@ const Post = () => {
                 </PostInfo>
                 <Question>
                     <QuestionSpan>
-                        Cách đặt tên Styled components thế nào cho hợp lí ạ, em cảm thấy thật rối
+                        Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối
                         bời :{'<'}
                     </QuestionSpan>
                 </Question>
@@ -58,9 +61,17 @@ const Post = () => {
             </PostContent>
             <PostInteraction>
                 <InteractionContainer>
-                    <Vote></Vote>
-                    <Comment></Comment>
-                    <Share></Share>
+                    <Interaction>
+                        <UpVote>Up</UpVote>
+                        <VoteSplit>/</VoteSplit>
+                        <DownVote>Down</DownVote>
+                    </Interaction>
+                    <Interaction>
+                        <Comment>Comment</Comment>
+                    </Interaction>
+                    <Interaction>
+                        <Share>Share</Share>
+                    </Interaction>
                 </InteractionContainer>
             </PostInteraction>
         </PostBox>

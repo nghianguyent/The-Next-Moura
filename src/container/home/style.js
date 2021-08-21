@@ -54,6 +54,7 @@ export const PostBox = styled.div`
     min-height: 83px;
     background-color: #fff;
     padding: 16px 20px;
+    padding-bottom: 0;
     text-align: left;
     border: 1px solid #dee0e1;
     box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
@@ -109,7 +110,9 @@ export const QuestionSpan = styled.span`
     font-weight: bold;
 `
 
-export const Answer = styled.div``
+export const Answer = styled.div`
+    margin-bottom: 16px;
+`
 
 export const AnswerSpan = styled.span`
     font-size: 18px;
@@ -118,14 +121,34 @@ export const AnswerSpan = styled.span`
 export const PostInteraction = styled.div`
     padding-left: 16px;
     padding-right: 16px;
+    margin-bottom: 4px;
 `
 
 export const InteractionContainer = styled.div`
     display: flex;
+    align-items: center;
+    text-align: center;
+    height: 30px;
 `
 
-export const Vote = styled.div``
+export const Interaction = styled.div`
+    margin: 0 30px;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    flex: 1;
+    justify-content: center;
+    border-radius: 1000px;
+`
 
-export const Comment = styled.div``
+export const UpVote = styled.span``
+
+export const VoteSplit = styled.div`
+    margin: 0 8px;
+`
+
+export const DownVote = styled.span``
+
+export const Comment = styled.span``
 
 export const Share = styled.div``

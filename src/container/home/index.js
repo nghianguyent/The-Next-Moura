@@ -9,10 +9,62 @@ import {
     UserName,
     AskQuestion,
     PostBox,
+    PostContent,
+    PostInfo,
+    PosterIcon,
+    PosterInfo,
+    PosterName,
+    PosterNameSpan,
+    PosterDecryption,
+    PosterDecryptionSpan,
+    Question,
+    QuestionSpan,
+    Answer,
+    AnswerSpan,
+    PostInteraction,
+    InteractionContainer,
+    Vote,
+    Comment,
+    Share,
 } from './style.js'
 
 const Post = () => {
-    return <PostBox></PostBox>
+    return (
+        <PostBox>
+            <PostContent>
+                <PostInfo>
+                    <PosterIcon src={Icon}></PosterIcon>
+                    <PosterInfo>
+                        <PosterName>
+                            <PosterNameSpan>Hoàng Hiệp</PosterNameSpan>
+                        </PosterName>
+                        <PosterDecryption>
+                            <PosterDecryptionSpan>K16 KTPM · 22/08/21</PosterDecryptionSpan>
+                        </PosterDecryption>
+                    </PosterInfo>
+                </PostInfo>
+                <Question>
+                    <QuestionSpan>
+                        Cách đặt tên Styled components thế nào cho hợp lí ạ, em cảm thấy thật rối
+                        bời :{'<'}
+                    </QuestionSpan>
+                </Question>
+                <Answer>
+                    <AnswerSpan>
+                        Cứ đặt đại đi bạn ơi, component bạn code thì bạn cứ chơi hoi, có ai hỏi thì
+                        nhận thôi :{')))))'}
+                    </AnswerSpan>
+                </Answer>
+            </PostContent>
+            <PostInteraction>
+                <InteractionContainer>
+                    <Vote></Vote>
+                    <Comment></Comment>
+                    <Share></Share>
+                </InteractionContainer>
+            </PostInteraction>
+        </PostBox>
+    )
 }
 
 function Home() {

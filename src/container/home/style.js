@@ -15,7 +15,7 @@ export const AskingBox = styled.div`
     width: 100%;
     min-height: 83px;
     background-color: #fff;
-    padding: 16px;
+    padding: 16px 20px;
     cursor: pointer;
     text-align: left;
     border: 1px solid #dee0e1;
@@ -27,7 +27,7 @@ export const AskingBox = styled.div`
 export const AskingTitle = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 14px;
 `
 
 export const UserIcon = styled.img`
@@ -53,7 +53,7 @@ export const PostBox = styled.div`
     width: 100%;
     min-height: 83px;
     background-color: #fff;
-    padding: 16px;
+    padding: 16px 20px;
     text-align: left;
     border: 1px solid #dee0e1;
     box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
@@ -63,10 +63,11 @@ export const PostBox = styled.div`
 
 export const PostContent = styled.div`
     cursor: pointer;
+    align-items: center;
 `
 
 export const PostInfo = styled.div`
-    margin-bottom: 8px;
+    margin-bottom: 16px;
     display: flex;
     align-items: center;
 `
@@ -78,10 +79,53 @@ export const PosterIcon = styled.img`
     height: 36px;
 `
 
-export const PosterInfo = styled.div``
+export const PosterInfo = styled.div`
+    font-size: 13px;
+    align-items: center;
+`
 
-export const PosterName = styled.div``
+export const PosterName = styled.div`
+    margin-bottom: 3px;
+`
 
-export const PosterDecryption = styled.div``
+export const PosterNameSpan = styled.span`
+    font-weight: bold;
+    color: #282829;
+`
 
-export const PostInteraction = styled.div``
+export const PosterDecryption = styled.span`
+    color: #636466;
+`
+
+export const PosterDecryptionSpan = styled.span``
+
+export const Question = styled.div`
+    margin-bottom: 16px;
+`
+
+export const QuestionSpan = styled.span`
+    color: #282829;
+    font-size: 18px;
+    font-weight: bold;
+`
+
+export const Answer = styled.div``
+
+export const AnswerSpan = styled.span`
+    font-size: 18px;
+`
+
+export const PostInteraction = styled.div`
+    padding-left: 16px;
+    padding-right: 16px;
+`
+
+export const InteractionContainer = styled.div`
+    display: flex;
+`
+
+export const Vote = styled.div``
+
+export const Comment = styled.div``
+
+export const Share = styled.div``

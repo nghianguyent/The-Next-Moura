@@ -37,11 +37,9 @@ export const NavbarItem = styled.div`
 `
 
 export const SearchBox = styled.div`
-    margin-right: 8px;
-    margin-left: 24px;
+    margin-right: 16px;
+    margin-left: 16px;
 `
-
-// export const SearchForm = styled.form``
 
 export const SearchBar = styled.div`
     display: flex;
@@ -70,20 +68,27 @@ export const SearchInput = styled.input`
     }
 `
 
-export const NavButton = styled.div`
+export const ButtonWrapper = styled.div`
+    padding: auto;
+    width: 40px;
+`
+
+export const NavButton = styled.button`
     cursor: pointer;
     padding: 0;
-    height: 49px;
+    margin: auto;
+    height: 40px;
+    width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    background-color: transparent;
+    transition-timing-function: ease-out;
+    transition-duration: 180ms;
     &:hover {
         background-color: #f7f7f8;
     }
-`
-
-export const ButtonWrapper = styled.div`
-    padding: auto;
 `
 
 export const UserIcon = styled.img`
@@ -91,4 +96,32 @@ export const UserIcon = styled.img`
     height: 24px;
     position: relative;
     border-radius: 100%;
+    transition-timing-function: ease-out;
+    transition-duration: 180ms;
+    ${NavButton}:hover & {
+        opacity: 0.7;
+    }
+`
+
+export const AskButton = styled.button`
+    margin-left: 16px;
+    padding: 0 15px;
+    cursor: pointer;
+    height: 30px;
+    min-width: 30px;
+    border-width: 0px;
+    outline: none;
+    text-align: center;
+    border-radius: 1000px;
+    background-color: #b92b27;
+    transition-timing-function: ease-out;
+    transition-duration: 60ms;
+    &:hover {
+        background-color: rgb(168, 39, 35);
+    }
+`
+
+export const AskButtonContent = styled.div`
+    font-size: 13px;
+    color: #fff;
 `

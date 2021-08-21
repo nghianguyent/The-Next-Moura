@@ -1,4 +1,3 @@
-import { Button } from '../../components/Button'
 import { MouraIcon } from '../../components/Icon'
 
 import userIcon from '../../assets/images/user-icon.jpeg'
@@ -13,6 +12,8 @@ import {
     NavButton,
     ButtonWrapper,
     UserIcon,
+    AskButton,
+    AskButtonContent,
 } from './style'
 
 function Navbar() {
@@ -28,13 +29,14 @@ function Navbar() {
                             <SearchInput placeholder="Search Moura"></SearchInput>
                         </SearchBar>
                     </SearchBox>
-                    <NavButton>
-                        <ButtonWrapper>
-                            <Button padding="0 8px 0 8px" border="none">
-                                <UserIcon src={userIcon}></UserIcon>
-                            </Button>
-                        </ButtonWrapper>
-                    </NavButton>
+                    <ButtonWrapper>
+                        <NavButton>
+                            <UserIcon src={userIcon}></UserIcon>
+                        </NavButton>
+                    </ButtonWrapper>
+                    <AskButton>
+                        <AskButtonContent>Đặt câu hỏi</AskButtonContent>
+                    </AskButton>
                 </NavbarItem>
             </NavbarContent>
         </NavbarContainer>

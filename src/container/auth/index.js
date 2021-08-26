@@ -1,11 +1,15 @@
+/* eslint-disable prettier/prettier */
+import React, { useEffect } from 'react'
+
 import { useForm } from 'react-hook-form'
 
 import { Box } from '../../components/Box'
 import { Button } from '../../components/Button'
 import { FacebookIcon, GoogleIcon, MouraIcon } from '../../components/Icon'
 
+// import LocalStorageUtils from '../../utils/LocalStorageUtils';
 import { LOCALSTORAGE_TOKEN_NAME } from './../../config'
-import { get } from './../../utils/ApiCaller'
+//  import { post } from './../../utils/ApiCaller'
 import { usePersistedState } from './../../utils/UsePersistedState'
 import {
     Description,
@@ -20,38 +24,21 @@ import {
 function Authentication() {
     const { setError } = useForm()
     const { token, setToken } = usePersistedState(LOCALSTORAGE_TOKEN_NAME, '')
-    const Login = async (media) => {
-        // try {
-        //     const response = await post(
-        //         'http://localhost:5000/api/v1/auth/google',
-        //         {
-        //             'Access-Control-Request-Method': HEAD,
-        //             token: data.accessToken,
-        //         },
-        //         {}
-        //     )
-        //     if (response.data.success) {
-        //         setToken(response.data.data.token)
-        //         location.reload()
-        //     }
-        //     console.log(response.data)
-        // } catch (ex) {
-        //     if (ex.respond && ex.status === 401) {
-        //         setError('user', {
-        //             type: 'validate',
-        //             message: 'cannot access token',
-        //         })
-        //     }
-        // }
-        const response = await get(
-            '/api/v1/auth/' + media,
-            {},
-            {
-                'Access-Control-Allow-Origin': 'https://accounts.google.com/',
-            }
-        )
-        console.log(response.data.data.accessToken)
+
+    const getUrl = () => {
+        window.open('http://localhost:5000/api/v1/auth/google', '_blank')
+        return window.location.href
     }
+    const Login = async () => {
+        const newWindow = window.open('http://localhost:5000/api/v1/auth/google', '_blank')
+    }
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setToken(res.token)
+            console.log(token)
+        }, 1000)
+        return clearInterval(interval)
+    })
     return (
         <FullPageContainer>
             <LoginBox>

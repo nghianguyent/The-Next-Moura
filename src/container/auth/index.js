@@ -30,25 +30,10 @@ function Authentication() {
 
     const Login = async () => {
         let newWindow = window.open('http://localhost:5000/api/v1/auth/google', '_self')
-        // let response = new Promise(() => {
-        //     let request = new XMLHttpRequest()
-        //     request.open('GET', 'login')
-        //     request.onload = () => {
-        //         if (request.status === 200) {
-        //             console.log(request.response);
-        //         } else {
-        //             console.log("not found")
-        //         }
-        //     }
-        //     request.send()
-        // })
         newWindow.addEventListener('close', () => {
             window.location.reload()
         })
     }
-    // if (response !== null && token === ""){
-    //     setToken(response.token)
-    // }
     return (
         <FullPageContainer>
             <LoginBox>

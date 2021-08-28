@@ -1,16 +1,17 @@
 /* eslint-disable prettier/prettier */
-import React, { useEffect } from 'react'
+import React from 'react'
 
+// import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { Box } from '../../components/Box'
 import { Button } from '../../components/Button'
 import { FacebookIcon, GoogleIcon, MouraIcon } from '../../components/Icon'
 
-// import LocalStorageUtils from '../../utils/LocalStorageUtils';
+import LocalStorageUtils from '../../utils/LocalStorageUtils'
+//  import { get } from './../../utils/ApiCaller'
+import { usePersistedState } from '../../utils/UsePersistedState'
 import { LOCALSTORAGE_TOKEN_NAME } from './../../config'
-//  import { post } from './../../utils/ApiCaller'
-import { usePersistedState } from './../../utils/UsePersistedState'
 import {
     Description,
     Footer,
@@ -23,22 +24,31 @@ import {
 
 function Authentication() {
     const { setError } = useForm()
-    const { token, setToken } = usePersistedState(LOCALSTORAGE_TOKEN_NAME, '')
+    const [token, setToken] = usePersistedState(LOCALSTORAGE_TOKEN_NAME, '')
 
-    const getUrl = () => {
-        window.open('http://localhost:5000/api/v1/auth/google', '_blank')
-        return window.location.href
-    }
+    let response = LocalStorageUtils.getItem('res')
+
     const Login = async () => {
-        const newWindow = window.open('http://localhost:5000/api/v1/auth/google', '_blank')
+        let newWindow = window.open('http://localhost:5000/api/v1/auth/google', '_self')
+        // let response = new Promise(() => {
+        //     let request = new XMLHttpRequest()
+        //     request.open('GET', 'login')
+        //     request.onload = () => {
+        //         if (request.status === 200) {
+        //             console.log(request.response);
+        //         } else {
+        //             console.log("not found")
+        //         }
+        //     }
+        //     request.send()
+        // })
+        newWindow.addEventListener('close', () => {
+            window.location.reload()
+        })
     }
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setToken(res.token)
-            console.log(token)
-        }, 1000)
-        return clearInterval(interval)
-    })
+    // if (response !== null && token === ""){
+    //     setToken(response.token)
+    // }
     return (
         <FullPageContainer>
             <LoginBox>

@@ -6,7 +6,7 @@ import LocalStorageUtils from './../utils/LocalStorageUtils'
 
 export const PublicRoute = (props) => {
     const user = LocalStorageUtils.getUser()
-    if (!user || user.sub?.length <= 0) {
+    if (!user || user.name?.length <= 0) {
         return <Route {...props} />
     }
     return <Redirect to="/" />

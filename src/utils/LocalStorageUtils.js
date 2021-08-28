@@ -1,6 +1,6 @@
 import jwt_decode from 'jwt-decode'
 
-import { LOCALSTORAGE_TOKEN_NAME } from './../config'
+import { LOCALSTORAGE_TOKEN_NAME } from '../config'
 
 class LocalStorageUtils {
     // get item
@@ -16,7 +16,7 @@ class LocalStorageUtils {
     }
     // set item
     setItem(key, value = '') {
-        if (typeof localStorage !== undefined) {
+        if (typeof localStorage !== 'undefined') {
             localStorage.setItem(key, JSON.stringify(value))
         }
     }

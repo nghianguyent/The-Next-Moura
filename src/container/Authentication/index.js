@@ -7,6 +7,6 @@ import Auth from '../auth'
 
 const Authentication = () => {
     const user = LocalStorageUtils.getUser(LOCALSTORAGE_TOKEN_NAME)
-    return !user ? <Auth /> : <Home />
+    return user === '' ? <Auth /> : <Home />
 }
 export default Authentication

@@ -3,7 +3,7 @@ import React from 'react'
 import { Switch } from 'react-router-dom'
 
 import Authentication from '../container/Authentication'
-import Auth from './../container/auth'
+import Auth from '../container/auth'
 import { PrivateRoute } from './PrivateRoute'
 import { PublicRoute } from './PublicRoute'
 
@@ -22,7 +22,6 @@ export const privateRoute = [
         component: Authentication,
     },
 ]
-
 export const Routes = (
     <Switch>
         {publicRoute.map((route) => (

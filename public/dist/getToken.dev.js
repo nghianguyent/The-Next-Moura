@@ -5,5 +5,5 @@ var res = {
     success: urlParams.get('success'),
     token: urlParams.get('token'),
 }
-localStorage.setItem('res', JSON.stringify(res))
-console.log(localStorage.getItem('res'))
+localStorage.setItem('token', JSON.stringify(res.token))
+window.location.replace('http://localhost:3000/')

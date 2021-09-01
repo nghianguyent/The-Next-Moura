@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Switch } from 'react-router-dom'
 
-import Authentication from '../container/Authentication'
+import Home from '../container/Home'
 import Auth from '../container/auth'
 import { PrivateRoute } from './PrivateRoute'
 import { PublicRoute } from './PublicRoute'
@@ -17,28 +17,32 @@ export const publicRoute = [
 
 export const privateRoute = [
     {
-        name: 'Authentication',
+        name: 'home',
         path: '/',
-        component: Authentication,
+        component: Home,
     },
 ]
-export const Routes = (
-    <Switch>
-        {publicRoute.map((route) => (
-            <PublicRoute
-                key={route.name}
-                exact={true}
-                path={route.path}
-                component={route.component}
-            />
-        ))}
-        {privateRoute.map((route) => (
-            <PrivateRoute
-                key={route.name}
-                exact={true}
-                path={route.path}
-                component={route.component}
-            />
-        ))}
-    </Switch>
-)
+export const Routes = () => {
+    return (
+        <Switch>
+            {publicRoute.map((route) => (
+                <PublicRoute
+                    key={route.name}
+                    exact={true}
+                    path={route.path}
+                    component={route.component}
+                />
+            ))}
+            {privateRoute.map((route) => (
+                <PrivateRoute
+                    key={route.name}
+                    exact={true}
+                    path={route.path}
+                    component={route.component}
+                />
+            ))}
+        </Switch>
+    )
+}
+
+export default Routes

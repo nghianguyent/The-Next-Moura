@@ -29,11 +29,12 @@ function Authentication() {
     LocalStorageUtils.setItem('token', JSON.stringify(response.token))
 
     if (response.success === 'true') {
-        return <Redirect to="/home" />
+        return <Redirect to="/" />
     }
 
-    const Login = () => {
-        window.open(process.env.REACT_APP_API_URL + 'api/v1/auth/google', '_self')
+    const Login = (media) => {
+        const ApiUrl = process.env.REACT_APP_API_URL + 'api/v1/auth/' + media
+        window.open(ApiUrl, '_self')
     }
 
     return (
@@ -48,7 +49,7 @@ function Authentication() {
                         tempor
                     </Description>
                     <Box padding="4rem 0 0 0">
-                        <Button onClick={Login} padding="4px 8px" fullWidth>
+                        <Button onClick={() => Login('google')} padding="4px 8px" fullWidth>
                             <Box margin="0px 10px 0px 0px">
                                 <GoogleIcon width="30px" />
                             </Box>

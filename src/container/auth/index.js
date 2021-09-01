@@ -1,17 +1,12 @@
-/* eslint-disable prettier/prettier */
 import React from 'react'
 
-// import { useEffect } from 'react'
-import { useForm } from 'react-hook-form'
+import { useLocation, Redirect } from 'react-router-dom'
 
 import { Box } from '../../components/Box'
 import { Button } from '../../components/Button'
 import { FacebookIcon, GoogleIcon, MouraIcon } from '../../components/Icon'
 
-import LocalStorageUtils from '../../utils/LocalStorageUtils'
-//  import { get } from './../../utils/ApiCaller'
-import { usePersistedState } from '../../utils/UsePersistedState'
-import { LOCALSTORAGE_TOKEN_NAME } from './../../config'
+import LocalStorageUtils from './../../utils/LocalStorageUtils'
 import {
     Description,
     Footer,
@@ -23,17 +18,24 @@ import {
 } from './style'
 
 function Authentication() {
-    const { setError } = useForm()
-    const [token, setToken] = usePersistedState(LOCALSTORAGE_TOKEN_NAME, '')
+    let location = useLocation()
+    const UrlParams = new URLSearchParams(location.search)
 
-    let response = LocalStorageUtils.getItem('res')
-
-    const Login = async () => {
-        let newWindow = window.open('http://localhost:5000/api/v1/auth/google', '_self')
-        newWindow.addEventListener('close', () => {
-            window.location.reload()
-        })
+    // save token to localStorage
+    let response = {
+        success: UrlParams.get('success'),
+        token: UrlParams.get('token'),
     }
+    LocalStorageUtils.setItem('token', JSON.stringify(response.token))
+
+    if (response.success === 'true') {
+        return <Redirect to="/home" />
+    }
+
+    const Login = () => {
+        window.open(process.env.REACT_APP_API_URL + 'api/v1/auth/google', '_self')
+    }
+
     return (
         <FullPageContainer>
             <LoginBox>
@@ -46,7 +48,7 @@ function Authentication() {
                         tempor
                     </Description>
                     <Box padding="4rem 0 0 0">
-                        <Button onClick={() => Login('google')} padding="4px 8px" fullWidth>
+                        <Button onClick={Login} padding="4px 8px" fullWidth>
                             <Box margin="0px 10px 0px 0px">
                                 <GoogleIcon width="30px" />
                             </Box>

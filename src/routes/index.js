@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Switch } from 'react-router-dom'
+import { Switch, Redirect } from 'react-router-dom'
 
 import Home from '../container/Home'
 import Auth from '../container/auth'
@@ -22,6 +22,7 @@ export const privateRoute = [
         component: Home,
     },
 ]
+
 export const Routes = () => {
     return (
         <Switch>
@@ -41,6 +42,7 @@ export const Routes = () => {
                     component={route.component}
                 />
             ))}
+            <Redirect to="/" />
         </Switch>
     )
 }

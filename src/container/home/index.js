@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import Icon from '../../assets/images/user-icon.jpeg'
 import Navbar from '../navbar'
 import {
@@ -24,14 +26,12 @@ import {
     PostInteraction,
     InteractionContainer,
     Interaction,
-    UpVote,
-    VoteSplit,
-    DownVote,
+    Vote,
     Comment,
     Share,
 } from './style.js'
 
-const Post = () => {
+const Post = (props) => {
     return (
         <PostBox>
             <PostContent>
@@ -39,10 +39,12 @@ const Post = () => {
                     <PosterIcon src={Icon}></PosterIcon>
                     <PosterInfo>
                         <PosterName>
-                            <PosterNameSpan>Hoàng Hiệp</PosterNameSpan>
+                            <PosterNameSpan>{props.name}</PosterNameSpan>
                         </PosterName>
                         <PosterDecryption>
-                            <PosterDecryptionSpan>K16 KTPM · 22/08/21</PosterDecryptionSpan>
+                            <PosterDecryptionSpan>
+                                {props.description + ' · ' + props.date}
+                            </PosterDecryptionSpan>
                         </PosterDecryption>
                     </PosterInfo>
                 </PostInfo>
@@ -62,9 +64,7 @@ const Post = () => {
             <PostInteraction>
                 <InteractionContainer>
                     <Interaction>
-                        <UpVote>Up</UpVote>
-                        <VoteSplit>/</VoteSplit>
-                        <DownVote>Down</DownVote>
+                        <Vote>Vote</Vote>
                     </Interaction>
                     <Interaction>
                         <Comment>Comment</Comment>
@@ -78,7 +78,35 @@ const Post = () => {
     )
 }
 
+const RenderPost = ({ items }) => {
+    return items.map((item) => (
+        <Post
+            key={item.idx}
+            // icon={item.icon}
+            name={item.name}
+            description={item.description}
+            date={item.date}
+            question={item.question}
+            image={item.image}
+            answer={item.answer}
+            vote={item.vote}
+        ></Post>
+    ))
+}
+
 function Home() {
+    const [posts, setPosts] = useState([
+        {
+            icon: { Icon },
+            name: 'Hoang Hiep',
+            description: 'K16',
+            date: '23/7/2021',
+            question: '',
+            image: 'link',
+            answer: '',
+        },
+    ])
+
     return (
         <FullPageContainer>
             <Navbar></Navbar>
@@ -90,7 +118,7 @@ function Home() {
                     </AskingTitle>
                     <AskQuestion>Câu hỏi của bạn hoặc địa chỉ trang web?</AskQuestion>
                 </AskingBox>
-                <Post></Post>
+                <RenderPost items={posts}></RenderPost>
             </HomeContent>
         </FullPageContainer>
     )

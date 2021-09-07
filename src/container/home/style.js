@@ -132,22 +132,22 @@ export const InteractionContainer = styled.div`
 `
 
 export const Interaction = styled.div`
-    margin: 0 30px;
+    margin: 0 25px;
     align-items: center;
     display: flex;
     height: 100%;
     flex: 1;
     justify-content: center;
     border-radius: 1000px;
+    cursor: pointer;
+    transition-timing-function: ease-out;
+    transition-duration: 180ms;
+    &:hover {
+        background-color: rgba(0, 0, 1, 0.03);
+    }
 `
 
-export const UpVote = styled.span``
-
-export const VoteSplit = styled.div`
-    margin: 0 8px;
-`
-
-export const DownVote = styled.span``
+export const Vote = styled.span``
 
 export const Comment = styled.span``
 

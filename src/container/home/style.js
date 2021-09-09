@@ -59,7 +59,7 @@ export const PostBox = styled.div`
     border: 1px solid #dee0e1;
     box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
     border-radius: 3px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 `
 
 export const PostContent = styled.div`
@@ -110,6 +110,11 @@ export const QuestionSpan = styled.span`
     font-weight: bold;
 `
 
+export const QuestionPicture = styled.a`
+    cursor: pointer;
+    margin-bottom: 16px;
+`
+
 export const Answer = styled.div`
     margin-bottom: 16px;
 `
@@ -147,7 +152,7 @@ export const Interaction = styled.div`
     }
 `
 
-export const Vote = styled.span``
+export const Like = styled.span``
 
 export const Comment = styled.span``
 

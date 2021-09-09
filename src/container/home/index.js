@@ -21,12 +21,13 @@ import {
     PosterDecryptionSpan,
     Question,
     QuestionSpan,
+    QuestionPicture,
     Answer,
     AnswerSpan,
     PostInteraction,
     InteractionContainer,
     Interaction,
-    Vote,
+    Like,
     Comment,
     Share,
 } from './style.js'
@@ -49,22 +50,19 @@ const Post = (props) => {
                     </PosterInfo>
                 </PostInfo>
                 <Question>
-                    <QuestionSpan>
-                        Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối
-                        bời :{'<'}
-                    </QuestionSpan>
+                    <QuestionSpan>{props.question}</QuestionSpan>
                 </Question>
+                {props.image === null ? null : (
+                    <QuestionPicture href={props.image}>{props.image}</QuestionPicture>
+                )}
                 <Answer>
-                    <AnswerSpan>
-                        Cứ đặt đại đi bạn ơi, component bạn code thì bạn cứ chơi hoi, có ai hỏi thì
-                        nhận thôi :{')))))'}
-                    </AnswerSpan>
+                    <AnswerSpan>{props.answer}</AnswerSpan>
                 </Answer>
             </PostContent>
             <PostInteraction>
                 <InteractionContainer>
                     <Interaction>
-                        <Vote>Vote</Vote>
+                        <Like>{props.like + ' Likes'}</Like>
                     </Interaction>
                     <Interaction>
                         <Comment>Comment</Comment>
@@ -89,7 +87,7 @@ const RenderPost = ({ items }) => {
             question={item.question}
             image={item.image}
             answer={item.answer}
-            vote={item.vote}
+            like={item.like}
         ></Post>
     ))
 }
@@ -101,9 +99,55 @@ function Home() {
             name: 'Hoang Hiep',
             description: 'K16',
             date: '23/7/2021',
-            question: '',
-            image: 'link',
-            answer: '',
+            question:
+                'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
+            image: '',
+            answer: 'Cứ đặt đại đi bạn ơi, component bạn code thì bạn cứ chơi hoi, có ai hỏi thì nhận thôi :)))',
+            like: 300,
+        },
+        {
+            icon: { Icon },
+            name: 'Hoang Hiep',
+            description: 'K16',
+            date: '23/7/2021',
+            question:
+                'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
+            image: '',
+            answer: 'Cứ đặt đại đi bạn ơi, component bạn code thì bạn cứ chơi hoi, có ai hỏi thì nhận thôi :)))',
+            like: 300,
+        },
+        {
+            icon: { Icon },
+            name: 'Hoang Hiep',
+            description: 'K16',
+            date: '23/7/2021',
+            question:
+                'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
+            image: '',
+            answer: 'Cứ đặt đại đi bạn ơi, component bạn code thì bạn cứ chơi hoi, có ai hỏi thì nhận thôi :)))',
+            like: 300,
+        },
+        {
+            icon: { Icon },
+            name: 'Hoang Hiep',
+            description: 'K16',
+            date: '23/7/2021',
+            question:
+                'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
+            image: '',
+            answer: 'Cứ đặt đại đi bạn ơi, component bạn code thì bạn cứ chơi hoi, có ai hỏi thì nhận thôi :)))',
+            like: 300,
+        },
+        {
+            icon: { Icon },
+            name: 'Hoang Hiep',
+            description: 'K16',
+            date: '23/7/2021',
+            question:
+                'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
+            image: '',
+            answer: 'Cứ đặt đại đi bạn ơi, component bạn code thì bạn cứ chơi hoi, có ai hỏi thì nhận thôi :)))',
+            like: 300,
         },
     ])
 

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const FullPageContainer = styled.div`
     min-height: 100vh;
     background-color: #f1f2f2;
+    padding-bottom: 16px;
 `
 
 export const HomeContent = styled.div`

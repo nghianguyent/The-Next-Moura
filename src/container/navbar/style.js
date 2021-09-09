@@ -43,6 +43,11 @@ export const SearchBox = styled.div`
     margin-left: 16px;
 `
 
+export const SearchIcon = styled.span`
+    padding-top: 5px;
+    padding-right: 4px;
+`
+
 export const SearchBar = styled.div`
     display: flex;
     border: 1px solid #dee0e1;

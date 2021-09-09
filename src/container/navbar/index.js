@@ -9,6 +9,7 @@ import {
     Logo,
     NavbarItem,
     SearchBox,
+    SearchIcon,
     SearchBar,
     SearchInput,
     NavButton,
@@ -71,11 +72,11 @@ function Navbar() {
     const [open, setOpen] = useState(false)
     var trigger = false
 
-    function ToggleDropdown() {
+    function toggleDropdown() {
         if (trigger) {
             trigger = false
         } else {
-            setOpen(true)
+            setOpen(!open)
         }
     }
 
@@ -93,11 +94,12 @@ function Navbar() {
                 <NavbarItem>
                     <SearchBox>
                         <SearchBar>
-                            <SearchInput placeholder="🔎 Search Moura"></SearchInput>
+                            <SearchIcon>🔎</SearchIcon>
+                            <SearchInput placeholder="Search Moura"></SearchInput>
                         </SearchBar>
                     </SearchBox>
                     <ButtonWrapper>
-                        <NavButton onClick={() => ToggleDropdown(false)}>
+                        <NavButton onClick={() => toggleDropdown()}>
                             <UserIcon src={userIcon} alt="userIcon"></UserIcon>
                         </NavButton>
                         {open && (

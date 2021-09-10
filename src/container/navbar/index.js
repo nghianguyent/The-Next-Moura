@@ -35,11 +35,13 @@ const DropDownMenu = (props) => {
         useEffect(() => {
             function handleClickOutside(event) {
                 if (ref.current && !ref.current.contains(event.target)) {
-                    props.clickOutside
+                    props.close()
                 }
             }
-            document.addEventListener('mousedown', props.clickOutside)
-            return () => {}
+            window.addEventListener('mousedown', handleClickOutside)
+            return () => {
+                window.addEventListener('mousedown', handleClickOutside)
+            }
         }, [ref])
     }
 
@@ -99,12 +101,10 @@ function Navbar() {
                         </SearchBar>
                     </SearchBox>
                     <ButtonWrapper>
-                        <NavButton onClick={() => toggleDropdown()}>
+                        <NavButton onMouseDown={() => toggleDropdown()}>
                             <UserIcon src={userIcon} alt="userIcon"></UserIcon>
                         </NavButton>
-                        {open && (
-                            <DropDownMenu clickOutside={() => handleClickOutside()}></DropDownMenu>
-                        )}
+                        {open && <DropDownMenu close={() => handleClickOutside()}></DropDownMenu>}
                     </ButtonWrapper>
                     <AskButton>
                         <AskButtonContent>Đặt câu hỏi</AskButtonContent>

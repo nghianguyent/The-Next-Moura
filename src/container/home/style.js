@@ -8,11 +8,14 @@ export const FullPageContainer = styled.div`
 
 export const HomeContent = styled.div`
     padding-top: 82px;
+    width: 1228px;
+    display: flex;
     margin: auto;
-    width: 768px;
 `
 
-export const MainContent = styled.div``
+export const MainContent = styled.div`
+    width: 768px;
+`
 
 export const AskingBox = styled.div`
     width: 100%;

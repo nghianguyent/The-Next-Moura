@@ -2,9 +2,11 @@ import { useState } from 'react'
 
 import Icon from '../../assets/images/user-icon.jpeg'
 import Navbar from '../navbar'
+import TagBoard from '../tagboard'
 import {
     FullPageContainer,
     HomeContent,
+    MainContent,
     AskingBox,
     AskingTitle,
     UserIcon,
@@ -155,14 +157,17 @@ function Home() {
         <FullPageContainer>
             <Navbar></Navbar>
             <HomeContent>
-                <AskingBox>
-                    <AskingTitle>
-                        <UserIcon src={Icon}></UserIcon>
-                        <UserName>Hiệp Hoàng</UserName>
-                    </AskingTitle>
-                    <AskQuestion>Câu hỏi của bạn hoặc địa chỉ trang web?</AskQuestion>
-                </AskingBox>
-                <RenderPost items={posts}></RenderPost>
+                <TagBoard></TagBoard>
+                <MainContent>
+                    <AskingBox>
+                        <AskingTitle>
+                            <UserIcon src={Icon}></UserIcon>
+                            <UserName>Hiệp Hoàng</UserName>
+                        </AskingTitle>
+                        <AskQuestion>Câu hỏi của bạn hoặc địa chỉ trang web?</AskQuestion>
+                    </AskingBox>
+                    <RenderPost items={posts}></RenderPost>
+                </MainContent>
             </HomeContent>
         </FullPageContainer>
     )

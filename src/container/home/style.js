@@ -12,6 +12,8 @@ export const HomeContent = styled.div`
     width: 768px;
 `
 
+export const MainContent = styled.div``
+
 export const AskingBox = styled.div`
     width: 100%;
     min-height: 83px;

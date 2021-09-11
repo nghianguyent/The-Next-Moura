@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import theme from '../../theme'
+
 export const BoardContainer = styled.div`
     position: relative;
     width: 200px;
@@ -10,8 +12,8 @@ export const BoardContainer = styled.div`
 export const BoardContent = styled.div`
     position: fixed;
     width: 200px;
-    background-color: #fff;
-    border: 1px solid #dee0e1;
+    background-color: ${theme.white};
+    border: 1px solid ${theme.borderDarkWhite};
     box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
     border-radius: 3px;
 `
@@ -32,7 +34,7 @@ export const BoardItem = styled.div`
     padding-left: 16px;
     padding-right: 16px;
     &:hover {
-        background-color: #f7f7f8;
+        background-color: ${theme.almostWhite};
     }
 `
 

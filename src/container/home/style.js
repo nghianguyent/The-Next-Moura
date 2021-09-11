@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
+import theme from '../../theme'
+
 export const PageWrap = styled.div``
 
 export const FullPageContainer = styled.div`
     min-height: 100vh;
-    background-color: #f1f2f2;
+    background-color: ${theme.homeBackgroundDarkWhite};
     padding-bottom: 16px;
 `
 
@@ -22,11 +24,11 @@ export const MainContent = styled.div`
 export const AskingBox = styled.div`
     width: 100%;
     min-height: 83px;
-    background-color: #fff;
+    background-color: ${theme.white};
     padding: 16px 20px;
     cursor: pointer;
     text-align: left;
-    border: 1px solid #dee0e1;
+    border: 1px solid ${theme.borderDarkWhite};
     box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
     border-radius: 3px;
     margin-bottom: 8px;
@@ -54,17 +56,17 @@ export const AskQuestion = styled.span`
     font-weight: bold;
     line-height: 1.4;
     font-size: 18px;
-    color: #939598;
+    color: ${theme.textGray};
 `
 
 export const PostBox = styled.div`
     width: 100%;
     min-height: 83px;
-    background-color: #fff;
+    background-color: ${theme.white};
     padding: 16px 20px;
     padding-bottom: 0;
     text-align: left;
-    border: 1px solid #dee0e1;
+    border: 1px solid ${theme.borderDarkWhite};
     box-shadow: 0 1px 1px rgb(0 0 0 / 4%);
     border-radius: 3px;
     margin-bottom: 10px;
@@ -96,10 +98,10 @@ export const PosterInfo = styled.div`
 export const PostTag = styled.div`
     margin-left: 10px;
     padding: 6px;
-    background-color: #808080;
+    background-color: ${theme.postTag};
     font-weight: bold;
     border-radius: 30px;
-    color: #fff;
+    color: ${theme.white};
     font-size: 12px;
 `
 
@@ -109,11 +111,11 @@ export const PosterName = styled.div`
 
 export const PosterNameSpan = styled.span`
     font-weight: bold;
-    color: #282829;
+    color: ${theme.postBlack};
 `
 
 export const PosterDecryption = styled.span`
-    color: #636466;
+    color: ${theme.postGray};
 `
 
 export const PosterDecryptionSpan = styled.span``
@@ -123,7 +125,7 @@ export const Question = styled.div`
 `
 
 export const QuestionSpan = styled.span`
-    color: #282829;
+    color: ${theme.postBlack};
     font-size: 18px;
     font-weight: bold;
 `

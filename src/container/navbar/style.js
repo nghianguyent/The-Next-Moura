@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-// import theme from '../../theme'
+import theme from '../../theme'
 
 export const NavbarContainer = styled.div`
     position: fixed;
@@ -10,7 +10,7 @@ export const NavbarContainer = styled.div`
     box-shadow: 0 3px 6px rgb(0 0 0 / 4%);
     width: 100%;
     z-index: 100;
-    background-color: #fff;
+    background-color: ${theme.white};
 `
 export const NavbarContent = styled.div`
     max-width: 900px;
@@ -50,7 +50,7 @@ export const SearchIcon = styled.span`
 
 export const SearchBar = styled.div`
     display: flex;
-    border: 1px solid #dee0e1;
+    border: 1px solid ${theme.borderDarkWhite};
     width: 580px;
     border-radius: 3px;
     padding-top: 4px;
@@ -60,7 +60,7 @@ export const SearchBar = styled.div`
     transition-timing-function: ease-out;
     transition-duration: 180ms;
     &:hover {
-        border-color: blue;
+        border-color: ${theme.blue};
     }
 `
 
@@ -94,7 +94,7 @@ export const NavButton = styled.button`
     transition-timing-function: ease-out;
     transition-duration: 180ms;
     &:hover {
-        background-color: #f7f7f8;
+        background-color: ${theme.hoverDarkWhite};
     }
 `
 
@@ -120,7 +120,7 @@ export const AskButton = styled.button`
     outline: none;
     text-align: center;
     border-radius: 1000px;
-    background-color: #b92b27;
+    background-color: ${theme.buttonRed};
     transition-timing-function: ease-out;
     transition-duration: 60ms;
     &:hover {
@@ -130,7 +130,7 @@ export const AskButton = styled.button`
 
 export const AskButtonContent = styled.div`
     font-size: 13px;
-    color: #fff;
+    color: ${theme.white};
 `
 
 export const DropDown = styled.div`
@@ -141,13 +141,13 @@ export const DropDown = styled.div`
     width: 230px;
     min-height: 200px;
     transform: translateX(-40%);
-    background-color: #fff;
-    border: 1px solid #dee0e1;
+    background-color: ${theme.white};
+    border: 1px solid ${theme.borderDarkWhite};
     border-radius: 3px;
 `
 
 export const UserProfile = styled.div`
-    border-bottom: 1px solid #dee0e1;
+    border-bottom: 1px solid ${theme.borderDarkWhite};
     padding: 8px 16px;
 `
 
@@ -169,7 +169,7 @@ export const DropDownUserName = styled.span`
 `
 
 export const DropDownItems = styled.a`
-    border-bottom: 1px solid #dee0e1;
+    border-bottom: 1px solid ${theme.borderDarkWhite};
 `
 
 export const DropDownButtons = styled.a`
@@ -181,7 +181,7 @@ export const DropDownButtons = styled.a`
     padding-left: 16px;
     padding-right: 16px;
     &:hover {
-        background-color: #f7f7f8;
+        background-color: ${theme.hoverDarkWhite};
     }
 `
 
@@ -193,8 +193,8 @@ export const DropDownButtonsIcon = styled.span`
     margin-right: 8px;
 `
 export const DropDownInfo = styled.div`
-    background-color: #f7f7f8;
+    background-color: ${theme.hoverDarkWhite};
     text-align: center;
     padding: 10px;
-    color: #939598;
+    color: ${theme.gray};
 `

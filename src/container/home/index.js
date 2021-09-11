@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+import Container from '../../components/Loading'
 
 import Icon from '../../assets/images/user-icon.jpeg'
 import Navbar from '../navbar'
@@ -33,6 +35,7 @@ import {
     Comment,
     Share,
     PostTag,
+    PageWrap,
 } from './style.js'
 
 const Post = (props) => {
@@ -220,24 +223,37 @@ function Home() {
             like: 300,
         },
     ])
+    const [loading, setLoading] = useState(false)
 
+    useEffect(() => {
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 5000)
+    }, [])
     return (
-        <FullPageContainer>
-            <Navbar></Navbar>
-            <HomeContent>
-                <TagBoard></TagBoard>
-                <MainContent>
-                    <AskingBox>
-                        <AskingTitle>
-                            <UserIcon src={Icon}></UserIcon>
-                            <UserName>Hiệp Hoàng</UserName>
-                        </AskingTitle>
-                        <AskQuestion>Câu hỏi của bạn hoặc địa chỉ trang web?</AskQuestion>
-                    </AskingBox>
-                    <RenderPost items={posts}></RenderPost>
-                </MainContent>
-            </HomeContent>
-        </FullPageContainer>
+        <PageWrap>
+            {loading ? (
+                <Container size="large" />
+            ) : (
+                <FullPageContainer>
+                    <Navbar></Navbar>
+                    <HomeContent>
+                        <TagBoard></TagBoard>
+                        <MainContent>
+                            <AskingBox>
+                                <AskingTitle>
+                                    <UserIcon src={Icon}></UserIcon>
+                                    <UserName>Hiệp Hoàng</UserName>
+                                </AskingTitle>
+                                <AskQuestion>Câu hỏi của bạn hoặc địa chỉ trang web?</AskQuestion>
+                            </AskingBox>
+                            <RenderPost items={posts}></RenderPost>
+                        </MainContent>
+                    </HomeContent>
+                </FullPageContainer>
+            )}
+        </PageWrap>
     )
 }
 

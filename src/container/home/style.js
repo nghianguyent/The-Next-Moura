@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+export const PageWrap = styled.div``
+
 export const FullPageContainer = styled.div`
     min-height: 100vh;
     background-color: #f1f2f2;

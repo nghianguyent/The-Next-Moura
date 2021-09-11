@@ -20,24 +20,15 @@ const RenderTagItems = ({ tags }) => {
                     <BoardText>{tag.tagName + ' (' + tag.numberOfPosts + ')'}</BoardText>
                 </BoardItem>
             ))}
-            <BoardItem>
-                <BoardText>Tech (30)</BoardText>
-            </BoardItem>
-            <BoardItem>
-                <BoardText>Blockchain (30)</BoardText>
-            </BoardItem>
-            <BoardItem>
-                <BoardText>Blockchain (30)</BoardText>
-            </BoardItem>
         </BoardContent>
     )
 }
 
 function TagBoard() {
     const [tags, setTags] = useState([
-        { tagName: 'Tech', numberOfPosts: 30 },
-        { tagName: 'Tech', numberOfPosts: 30 },
-        { tagName: 'Tech', numberOfPosts: 30 },
+        { tagName: 'Front-end', numberOfPosts: 1000000000 },
+        { tagName: 'Back-end', numberOfPosts: 30 },
+        { tagName: 'Blockchain', numberOfPosts: 2 },
     ])
     return (
         <BoardContainer>

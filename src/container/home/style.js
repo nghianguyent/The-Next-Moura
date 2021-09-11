@@ -91,6 +91,16 @@ export const PosterInfo = styled.div`
     align-items: center;
 `
 
+export const PostTag = styled.div`
+    margin-left: 10px;
+    padding: 6px;
+    background-color: #808080;
+    font-weight: bold;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 12px;
+`
+
 export const PosterName = styled.div`
     margin-bottom: 3px;
 `

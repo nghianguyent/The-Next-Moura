@@ -32,6 +32,7 @@ import {
     Like,
     Comment,
     Share,
+    PostTag,
 } from './style.js'
 
 const Post = (props) => {
@@ -50,6 +51,7 @@ const Post = (props) => {
                             </PosterDecryptionSpan>
                         </PosterDecryption>
                     </PosterInfo>
+                    <PostTag>{props.tag}</PostTag>
                 </PostInfo>
                 <Question>
                     <QuestionSpan>{props.question}</QuestionSpan>
@@ -86,6 +88,7 @@ const RenderPost = ({ items }) => {
             name={item.name}
             description={item.description}
             date={item.date}
+            tag={item.tag}
             question={item.question}
             image={item.image}
             answer={item.answer}
@@ -101,6 +104,7 @@ function Home() {
             name: 'Hoang Hiep',
             description: 'K16',
             date: '23/7/2021',
+            tag: 'Front-end',
             question:
                 'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
             image: '',
@@ -112,6 +116,7 @@ function Home() {
             name: 'Hoang Hiep',
             description: 'K16',
             date: '23/7/2021',
+            tag: 'Front-end',
             question:
                 'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
             image: '',
@@ -123,6 +128,7 @@ function Home() {
             name: 'Hoang Hiep',
             description: 'K16',
             date: '23/7/2021',
+            tag: 'Front-end',
             question:
                 'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
             image: '',
@@ -134,6 +140,7 @@ function Home() {
             name: 'Hoang Hiep',
             description: 'K16',
             date: '23/7/2021',
+            tag: 'Front-end',
             question:
                 'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
             image: '',
@@ -145,6 +152,67 @@ function Home() {
             name: 'Hoang Hiep',
             description: 'K16',
             date: '23/7/2021',
+            tag: 'Front-end',
+            question:
+                'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
+            image: '',
+            answer: 'Cứ đặt đại đi bạn ơi, component bạn code thì bạn cứ chơi hoi, có ai hỏi thì nhận thôi :)))',
+            like: 300,
+        },
+        {
+            icon: { Icon },
+            name: 'Hoang Hiep',
+            description: 'K16',
+            date: '23/7/2021',
+            tag: 'Front-end',
+            question:
+                'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
+            image: '',
+            answer: 'Cứ đặt đại đi bạn ơi, component bạn code thì bạn cứ chơi hoi, có ai hỏi thì nhận thôi :)))',
+            like: 300,
+        },
+        {
+            icon: { Icon },
+            name: 'Hoang Hiep',
+            description: 'K16',
+            date: '23/7/2021',
+            tag: 'Front-end',
+            question:
+                'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
+            image: '',
+            answer: 'Cứ đặt đại đi bạn ơi, component bạn code thì bạn cứ chơi hoi, có ai hỏi thì nhận thôi :)))',
+            like: 300,
+        },
+        {
+            icon: { Icon },
+            name: 'Hoang Hiep',
+            description: 'K16',
+            date: '23/7/2021',
+            tag: 'Front-end',
+            question:
+                'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
+            image: '',
+            answer: 'Cứ đặt đại đi bạn ơi, component bạn code thì bạn cứ chơi hoi, có ai hỏi thì nhận thôi :)))',
+            like: 300,
+        },
+        {
+            icon: { Icon },
+            name: 'Hoang Hiep',
+            description: 'K16',
+            date: '23/7/2021',
+            tag: 'Front-end',
+            question:
+                'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
+            image: '',
+            answer: 'Cứ đặt đại đi bạn ơi, component bạn code thì bạn cứ chơi hoi, có ai hỏi thì nhận thôi :)))',
+            like: 300,
+        },
+        {
+            icon: { Icon },
+            name: 'Hoang Hiep',
+            description: 'K16',
+            date: '23/7/2021',
+            tag: 'Front-end',
             question:
                 'Cách đặt tên Styled Components thế nào cho hợp lí ạ, em cảm thấy thật rối bời :<',
             image: '',

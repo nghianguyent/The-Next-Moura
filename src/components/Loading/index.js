@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { DisappearedLoading } from 'react-loadingg'
+import { CircleLoading } from 'react-loadingg'
 
-const Container = (props) => <DisappearedLoading color={props.color} size={props.size} />
+const Container = () => <CircleLoading color={props.color} size={props.size} />
 export default Container

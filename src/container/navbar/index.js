@@ -62,7 +62,7 @@ const DropDownMenu = (props) => {
                 </DropDownButtons>
                 <DropDownButtons>
                     <DropDownButtonsIcon>👋</DropDownButtonsIcon>
-                    <DropDownButtonsSpan>Đăng xuất</DropDownButtonsSpan>
+                    <DropDownButtonsSpan onClick={props.logout}>Đăng xuất</DropDownButtonsSpan>
                 </DropDownButtons>
             </DropDownItems>
             <DropDownInfo>Moura team</DropDownInfo>
@@ -70,7 +70,7 @@ const DropDownMenu = (props) => {
     )
 }
 
-function Navbar() {
+function Navbar(props) {
     const [open, setOpen] = useState(false)
     var trigger = false
 
@@ -104,7 +104,12 @@ function Navbar() {
                         <NavButton onMouseDown={() => toggleDropdown()}>
                             <UserIcon src={userIcon} alt="userIcon"></UserIcon>
                         </NavButton>
-                        {open && <DropDownMenu close={() => handleClickOutside()}></DropDownMenu>}
+                        {open && (
+                            <DropDownMenu
+                                close={() => handleClickOutside()}
+                                logout={props.logout}
+                            ></DropDownMenu>
+                        )}
                     </ButtonWrapper>
                     <AskButton>
                         <AskButtonContent>Đặt câu hỏi</AskButtonContent>

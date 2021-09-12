@@ -90,7 +90,7 @@ const RenderPost = ({ items }) => {
     return items.map((item) => (
         <Post
             key={item.idx}
-            // icon={item.icon}
+            icon={item.icon}
             name={item.name}
             description={item.description}
             date={item.date}
@@ -246,7 +246,7 @@ const Home = () => {
                 <Container size="large" />
             ) : (
                 <FullPageContainer>
-                    <Navbar></Navbar>
+                    <Navbar logout={logout}></Navbar>
                     <HomeContent>
                         <TagBoard></TagBoard>
                         <MainContent>

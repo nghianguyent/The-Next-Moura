@@ -62,7 +62,7 @@ const DropDownMenu = (props) => {
                 </DropDownButtons>
                 <DropDownButtons>
                     <DropDownButtonsIcon>👋</DropDownButtonsIcon>
-                    <DropDownButtonsSpan onClick={props.logout}>Đăng xuất</DropDownButtonsSpan>
+                    <DropDownButtonsSpan onMouseUp={props.logout}>Đăng xuất</DropDownButtonsSpan>
                 </DropDownButtons>
             </DropDownItems>
             <DropDownInfo>Moura team</DropDownInfo>

@@ -39,6 +39,7 @@ import {
     Share,
     PostTag,
     PageWrap,
+    PostMain,
 } from './style.js'
 
 const Post = (props) => {
@@ -59,15 +60,17 @@ const Post = (props) => {
                     </PosterInfo>
                     <PostTag>{props.tag}</PostTag>
                 </PostInfo>
-                <Question>
-                    <QuestionSpan>{props.question}</QuestionSpan>
-                </Question>
-                {props.image === null ? null : (
-                    <QuestionPicture href={props.image}>{props.image}</QuestionPicture>
-                )}
-                <Answer>
-                    <AnswerSpan>{props.answer}</AnswerSpan>
-                </Answer>
+                <PostMain>
+                    <Question>
+                        <QuestionSpan>{props.question}</QuestionSpan>
+                    </Question>
+                    {props.image === null ? null : (
+                        <QuestionPicture href={props.image}>{props.image}</QuestionPicture>
+                    )}
+                    <Answer>
+                        <AnswerSpan>{props.answer}</AnswerSpan>
+                    </Answer>
+                </PostMain>
             </PostContent>
             <PostInteraction>
                 <InteractionContainer>

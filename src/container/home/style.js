@@ -73,7 +73,6 @@ export const PostBox = styled.div`
 `
 
 export const PostContent = styled.div`
-    cursor: pointer;
     align-items: center;
 `
 
@@ -103,15 +102,20 @@ export const PostTag = styled.div`
     border-radius: 30px;
     color: ${theme.white};
     font-size: 12px;
+    cursor: pointer;
 `
 
 export const PosterName = styled.div`
     margin-bottom: 3px;
+    cursor: pointer;
 `
 
 export const PosterNameSpan = styled.span`
     font-weight: bold;
     color: ${theme.postBlack};
+    &:hover {
+        underline: 1px solid ${theme.borderDarkWhite};
+    }
 `
 
 export const PosterDecryption = styled.span`
@@ -120,8 +124,13 @@ export const PosterDecryption = styled.span`
 
 export const PosterDecryptionSpan = styled.span``
 
+export const PostMain = styled.div`
+    cursor: pointer;
+`
+
 export const Question = styled.div`
     margin-bottom: 16px;
+    cursor: pointer;
 `
 
 export const QuestionSpan = styled.span`
@@ -131,7 +140,6 @@ export const QuestionSpan = styled.span`
 `
 
 export const QuestionPicture = styled.a`
-    cursor: pointer;
     margin-bottom: 16px;
 `
 

@@ -52,3 +52,7 @@ export const Logo = styled.div`
     padding-bottom: 50px;
     margin-top: 30px;
 `
+export const LinkToApi = styled.a`
+    text-decoration: none;
+    width: 100%;
+`

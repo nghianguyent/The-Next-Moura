@@ -2,8 +2,8 @@ import React from 'react'
 
 import { Switch, Redirect } from 'react-router-dom'
 
-import Home from '../container/Home'
 import Auth from '../container/auth'
+import Home from '../container/home'
 import { PrivateRoute } from './PrivateRoute'
 import { PublicRoute } from './PublicRoute'
 

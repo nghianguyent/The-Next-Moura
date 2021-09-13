@@ -2,5 +2,14 @@ import React from 'react'
 
 import { CircleLoading } from 'react-loadingg'
 
-const Container = (props) => <CircleLoading color={props.color} size={props.size} />
-export default Container
+const CircularProgress = (Component, props) => {
+    const { children, ...rest } = props
+    return <CircleLoading {...rest}>{children}</CircleLoading>
+}
+
+CircularProgress = {
+    color: PropTypes.string,
+    size: PropTypes.string,
+}
+
+export default CircularProgress

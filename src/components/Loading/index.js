@@ -2,7 +2,7 @@ import React from 'react'
 
 import { CircleLoading } from 'react-loadingg'
 
-const CircularProgress = (Component, props) => {
+const CircularProgress = (props) => {
     const { children, ...rest } = props
     return <CircleLoading {...rest}>{children}</CircleLoading>
 }

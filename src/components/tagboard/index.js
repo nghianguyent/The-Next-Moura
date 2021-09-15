@@ -1,19 +1,18 @@
-import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 import TagItem from '../TagItem'
 import { BoardContainer } from './style'
 
-const TagBoard = () => {
-    const [tags, setTags] = useState([
-        { tagName: 'Front-end', numberOfPosts: 1000000 },
-        { tagName: 'Back-end', numberOfPosts: 30 },
-        { tagName: 'Blockchain', numberOfPosts: 2 },
-    ])
+const TagBoard = ({ tags }) => {
     return (
         <BoardContainer>
             <TagItem tags={tags}></TagItem>
         </BoardContainer>
     )
+}
+
+TagBoard.propTypes = {
+    tags: PropTypes.arrayOf(PropTypes.string, PropTypes.number),
 }
 
 export default TagBoard

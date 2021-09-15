@@ -58,3 +58,9 @@ export const AskQuestion = styled.span`
     font-size: 18px;
     color: ${theme.textGray};
 `
+
+export const LoadingWrapper = styled.div`
+    min-height: 100vh;
+    background-color: ${theme.homeBackgroundDarkWhite};
+    padding-bottom: 16px;
+`

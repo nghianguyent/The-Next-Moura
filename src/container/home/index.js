@@ -3,7 +3,7 @@ import { React, useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import Answer from '../../components/Answer'
-import Container from '../../components/Loading'
+import CircularProgress from '../../components/Loading'
 import Navbar from '../../components/Navbar'
 import TagBoard from '../../components/TagBoard'
 
@@ -19,6 +19,7 @@ import {
     UserName,
     AskQuestion,
     PageWrap,
+    LoadingWrapper,
 } from './style.js'
 
 const RenderAnswer = ({ items }) => {
@@ -36,6 +37,14 @@ const RenderAnswer = ({ items }) => {
             like={item.like}
         ></Answer>
     ))
+}
+
+const LoadingHome = () => {
+    return (
+        <LoadingWrapper>
+            <CircularProgress size="large" />
+        </LoadingWrapper>
+    )
 }
 
 const Home = () => {
@@ -173,30 +182,34 @@ const Home = () => {
         setIsLoading(true)
         setTimeout(() => {
             setIsLoading(false)
-        }, 0)
+        }, 4000)
     }, [])
+
+    const [tags, setTags] = useState([
+        { tagName: 'Front-end', numberOfPosts: 1000000 },
+        { tagName: 'Back-end', numberOfPosts: 30 },
+        { tagName: 'Blockchain', numberOfPosts: 2 },
+    ])
+
     return (
         <PageWrap>
-            {isLoading ? (
-                <Container size="large" />
-            ) : (
-                <FullPageContainer>
-                    <Navbar logout={logout}></Navbar>
-                    <HomeContent>
-                        <TagBoard></TagBoard>
-                        <MainContent>
-                            <AskingBox>
-                                <AskingTitle>
-                                    <UserIcon src={Icon}></UserIcon>
-                                    <UserName>Hiệp Hoàng</UserName>
-                                </AskingTitle>
-                                <AskQuestion>Câu hỏi của bạn hoặc địa chỉ trang web?</AskQuestion>
-                            </AskingBox>
-                            <RenderAnswer items={posts}></RenderAnswer>
-                        </MainContent>
-                    </HomeContent>
-                </FullPageContainer>
-            )}
+            <FullPageContainer>
+                <Navbar logout={logout}></Navbar>
+                {isLoading ? <LoadingHome /> : null}
+                <HomeContent>
+                    <TagBoard tags={tags}></TagBoard>
+                    <MainContent>
+                        <AskingBox>
+                            <AskingTitle>
+                                <UserIcon src={Icon}></UserIcon>
+                                <UserName>Hiệp Hoàng</UserName>
+                            </AskingTitle>
+                            <AskQuestion>Câu hỏi của bạn hoặc địa chỉ trang web?</AskQuestion>
+                        </AskingBox>
+                        <RenderAnswer items={posts}></RenderAnswer>
+                    </MainContent>
+                </HomeContent>
+            </FullPageContainer>
         </PageWrap>
     )
 }

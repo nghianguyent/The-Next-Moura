@@ -3,7 +3,7 @@ import { React, useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import Container from '../../components/Loading'
-import TagBoard from '../../components/TagBoard'
+import TagBoard from '../../components/tagboard'
 
 import Icon from '../../assets/images/user-icon.jpeg'
 import LocalStorageUtils from '../../utils/LocalStorageUtils'

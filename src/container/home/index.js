@@ -2,7 +2,6 @@ import { React, useState, useEffect } from 'react'
 
 import { useHistory } from 'react-router-dom'
 
-import Answer from '../../components/Answer'
 import Container from '../../components/Loading'
 import TagBoard from '../../components/TagBoard'
 
@@ -18,12 +17,81 @@ import {
     UserIcon,
     UserName,
     AskQuestion,
+    PostBox,
+    PostContent,
+    PostInfo,
+    PosterIcon,
+    PosterInfo,
+    PosterName,
+    PosterNameSpan,
+    PosterDecryption,
+    PosterDecryptionSpan,
+    Question,
+    QuestionSpan,
+    QuestionPicture,
+    Answer,
+    AnswerSpan,
+    PostInteraction,
+    InteractionContainer,
+    Interaction,
+    Like,
+    Comment,
+    Share,
+    PostTag,
     PageWrap,
+    PostMain,
 } from './style.js'
 
-const RenderAnswers = ({ items }) => {
+const Post = (props) => {
+    return (
+        <PostBox>
+            <PostContent>
+                <PostInfo>
+                    <PosterIcon src={Icon}></PosterIcon>
+                    <PosterInfo>
+                        <PosterName>
+                            <PosterNameSpan>{props.name}</PosterNameSpan>
+                        </PosterName>
+                        <PosterDecryption>
+                            <PosterDecryptionSpan>
+                                {props.description + ' · ' + props.date}
+                            </PosterDecryptionSpan>
+                        </PosterDecryption>
+                    </PosterInfo>
+                    <PostTag>{props.tag}</PostTag>
+                </PostInfo>
+                <PostMain>
+                    <Question>
+                        <QuestionSpan>{props.question}</QuestionSpan>
+                    </Question>
+                    {props.image === null ? null : (
+                        <QuestionPicture href={props.image}>{props.image}</QuestionPicture>
+                    )}
+                    <Answer>
+                        <AnswerSpan>{props.answer}</AnswerSpan>
+                    </Answer>
+                </PostMain>
+            </PostContent>
+            <PostInteraction>
+                <InteractionContainer>
+                    <Interaction>
+                        <Like>{props.like + ' Likes'}</Like>
+                    </Interaction>
+                    <Interaction>
+                        <Comment>Comment</Comment>
+                    </Interaction>
+                    <Interaction>
+                        <Share>Share</Share>
+                    </Interaction>
+                </InteractionContainer>
+            </PostInteraction>
+        </PostBox>
+    )
+}
+
+const RenderPost = ({ items }) => {
     return items.map((item) => (
-        <Answer
+        <Post
             key={item.idx}
             icon={item.icon}
             name={item.name}
@@ -34,7 +102,7 @@ const RenderAnswers = ({ items }) => {
             image={item.image}
             answer={item.answer}
             like={item.like}
-        ></Answer>
+        ></Post>
     ))
 }
 
@@ -192,7 +260,7 @@ const Home = () => {
                                 </AskingTitle>
                                 <AskQuestion>Câu hỏi của bạn hoặc địa chỉ trang web?</AskQuestion>
                             </AskingBox>
-                            <RenderAnswers items={posts}></RenderAnswers>
+                            <RenderPost items={posts}></RenderPost>
                         </MainContent>
                     </HomeContent>
                 </FullPageContainer>

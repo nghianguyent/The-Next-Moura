@@ -4,11 +4,11 @@ import { useHistory } from 'react-router-dom'
 
 import Answer from '../../components/Answer'
 import Container from '../../components/Loading'
+import Navbar from '../../components/Navbar'
 import TagBoard from '../../components/TagBoard'
 
 import Icon from '../../assets/images/user-icon.jpeg'
 import LocalStorageUtils from '../../utils/LocalStorageUtils'
-import Navbar from '../navbar'
 import {
     FullPageContainer,
     HomeContent,
@@ -173,7 +173,7 @@ const Home = () => {
         setIsLoading(true)
         setTimeout(() => {
             setIsLoading(false)
-        }, 5000)
+        }, 0)
     }, [])
     return (
         <PageWrap>

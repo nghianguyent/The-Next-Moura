@@ -1,8 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 
-import { MouraIcon } from '../../components/Icon'
-
 import userIcon from '../../assets/images/user-icon.jpeg'
+import { MouraIcon } from '../Icon'
 import {
     NavbarContainer,
     NavbarContent,

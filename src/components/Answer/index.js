@@ -11,8 +11,9 @@ import {
     PosterDecryptionSpan,
     Question,
     QuestionSpan,
-    QuestionPicture, // Answer,
-    // AnswerSpan,
+    QuestionPicture,
+    AnswerContent,
+    AnswerSpan,
     PostInteraction,
     InteractionContainer,
     Interaction,
@@ -48,9 +49,9 @@ const Answer = (props) => {
                     {props.image === null ? null : (
                         <QuestionPicture href={props.image}>{props.image}</QuestionPicture>
                     )}
-                    {/* <Answer>
+                    <AnswerContent>
                         <AnswerSpan>{props.answer}</AnswerSpan>
-                    </Answer> */}
+                    </AnswerContent>
                 </PostMain>
             </PostContent>
             <PostInteraction>

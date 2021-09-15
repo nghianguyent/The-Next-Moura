@@ -86,7 +86,7 @@ export const QuestionPicture = styled.a`
     margin-bottom: 16px;
 `
 
-export const Answer = styled.div`
+export const AnswerContent = styled.div`
     margin-bottom: 16px;
 `
 

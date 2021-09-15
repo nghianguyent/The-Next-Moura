@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 import { BoardTitle, BoardHeader, BoardContent, BoardItem, BoardText } from './style'
 
 const TagItem = ({ tags }) => {
@@ -15,7 +17,7 @@ const TagItem = ({ tags }) => {
     )
 }
 
-TagItem = {
+TagItem.propTypes = {
     tags: PropTypes.arrayOf(PropTypes.string, PropTypes.number),
 }
 

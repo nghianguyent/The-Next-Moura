@@ -1,5 +1,6 @@
 import React from 'react'
 
+import PropTypes from 'prop-types'
 import { CircleLoading } from 'react-loadingg'
 
 const CircularProgress = (props) => {
@@ -7,7 +8,7 @@ const CircularProgress = (props) => {
     return <CircleLoading {...rest}>{children}</CircleLoading>
 }
 
-CircularProgress = {
+CircularProgress.propsTypes = {
     color: PropTypes.string,
     size: PropTypes.string,
 }

@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 
 import Answer from '../../components/Answer'
 import Container from '../../components/Loading'
-import TagBoard from '../../components/tagboard'
+import TagBoard from '../../components/TagBoard'
 
 import Icon from '../../assets/images/user-icon.jpeg'
 import LocalStorageUtils from '../../utils/LocalStorageUtils'
@@ -167,17 +167,17 @@ const Home = () => {
             like: 300,
         },
     ])
-    const [loading, setLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
-        setLoading(true)
+        setIsLoading(true)
         setTimeout(() => {
-            setLoading(false)
+            setIsLoading(false)
         }, 5000)
     }, [])
     return (
         <PageWrap>
-            {loading ? (
+            {isLoading ? (
                 <Container size="large" />
             ) : (
                 <FullPageContainer>

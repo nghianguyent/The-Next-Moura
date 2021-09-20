@@ -16,7 +16,7 @@ export const FullPageContainer = styled.div`
 export const LoginBox = styled.div`
     width: 300px;
     background-color: white;
-    border: 1px solid #dee0e1;
+    border: 1px solid rgba(222, 224, 225, 1);
     border-radius: 2px;
 `
 export const LoginContainer = styled.div`
@@ -26,7 +26,7 @@ export const LoginContainer = styled.div`
 `
 export const Footer = styled.div`
     width: 100%;
-    background-color: #dee0e1;
+    background-color: rgba(222, 224, 225, 1);
     align-self: flex-start;
     font-size: 13px;
     display: flex;
@@ -37,7 +37,7 @@ export const Footer = styled.div`
 export const HintBox = styled.div`
     border-top-style: solid;
     border-width: 1px;
-    border-color: #dee0e1;
+    border-color: rgba(222, 224, 225, 1);
     padding: 15px;
     text-align: center;
 `

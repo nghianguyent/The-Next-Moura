@@ -4,7 +4,7 @@ import { useLocation, Redirect } from 'react-router-dom'
 
 import { Box } from '../../components/Box'
 import { Button } from '../../components/Button'
-import { FacebookIcon, GoogleIcon, MouraIcon } from '../../components/Icon'
+import { FacebookIcon, GoogleIcon, MouraIcon, GithubIcon } from '../../components/Icon'
 
 import LocalStorageUtils from './../../utils/LocalStorageUtils'
 import {
@@ -46,7 +46,7 @@ function Authentication() {
                         Lorem ipsum dolor sit amer, consectetur adipiscing elit, sed do eiusmod
                         tempor
                     </Description>
-                    <Box margin="4rem 0 0 0">
+                    <Box margin="4rem 0 0 0" padding="3px 0 0 0">
                         <LinkToApi href={ApiUrl + 'google'}>
                             <Button padding="4px 8px" fullWidth>
                                 <Box margin="0px 10px 0px 0px">
@@ -56,12 +56,23 @@ function Authentication() {
                             </Button>
                         </LinkToApi>
                     </Box>
-                    <Box padding="1rem 0">
+                    <Box padding="1.25rem 0 0 0">
                         {/* hasn't worked yet */}
                         <LinkToApi href={ApiUrl + 'facebook'}>
                             <Button padding="4px 8px" fullWidth>
                                 <Box margin="0px 10px 0px 0px">
                                     <FacebookIcon width="30px" />
+                                </Box>
+                                Continue with Facebook
+                            </Button>
+                        </LinkToApi>
+                    </Box>
+                    <Box padding="1.25rem 0">
+                        {/* hasn't worked yet */}
+                        <LinkToApi href={ApiUrl + 'github'}>
+                            <Button padding="4px 8px" fullWidth>
+                                <Box margin="0px 10px 0px 0px">
+                                    <GithubIcon width="30px" />
                                 </Box>
                                 Continue with Facebook
                             </Button>

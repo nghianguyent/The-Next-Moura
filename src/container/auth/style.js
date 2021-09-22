@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import background from '../../assets/images/bg.jpg'
+import theme from './../../theme'
 
 export const FullPageContainer = styled.div`
     display: flex;
@@ -16,7 +17,7 @@ export const FullPageContainer = styled.div`
 export const LoginBox = styled.div`
     width: 300px;
     background-color: white;
-    border: 1px solid rgba(222, 224, 225, 1);
+    border: 1px solid ${theme.borderDarkWhite};
     border-radius: 2px;
 `
 export const LoginContainer = styled.div`
@@ -26,7 +27,7 @@ export const LoginContainer = styled.div`
 `
 export const Footer = styled.div`
     width: 100%;
-    background-color: rgba(222, 224, 225, 1);
+    background-color: ${theme.footerDarkWhite};
     align-self: flex-start;
     font-size: 13px;
     display: flex;
@@ -37,7 +38,7 @@ export const Footer = styled.div`
 export const HintBox = styled.div`
     border-top-style: solid;
     border-width: 1px;
-    border-color: rgba(222, 224, 225, 1);
+    border-color: ${theme.borderDarkWhite};
     padding: 15px;
     text-align: center;
 `

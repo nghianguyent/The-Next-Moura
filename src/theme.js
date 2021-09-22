@@ -1,5 +1,7 @@
 const theme = {
-    darkWhite: 'rgba(189, 195, 199, 1)',
+    darkWhite: '#bdc3c7',
+    borderDarkWhite: '#dee0e1',
+    footerDarkWhite: '#dee0e1',
 }
 
 export default theme
